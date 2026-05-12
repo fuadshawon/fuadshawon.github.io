@@ -3,670 +3,742 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammad Fuad Hasan Shawon</title>
+<title>Mohammad Fuad Hasan Shawon — Healthcare Operations & Documentation Specialist</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --teal-900: #04342C;
-    --teal-800: #085041;
-    --teal-600: #0F6E56;
-    --teal-400: #1D9E75;
-    --teal-200: #5DCAA5;
-    --teal-100: #9FE1CB;
-    --teal-50: #E1F5EE;
-    --gray-900: #2C2C2A;
-    --gray-800: #444441;
-    --gray-600: #5F5E5A;
-    --gray-400: #888780;
-    --gray-200: #B4B2A9;
-    --gray-100: #D3D1C7;
-    --gray-50: #F1EFE8;
-    --amber-800: #633806;
-    --amber-400: #BA7517;
-    --amber-50: #FAEEDA;
+    --teal: #0F6E56;
+    --teal-mid: #1D9E75;
+    --teal-light: #5DCAA5;
+    --teal-pale: #E1F5EE;
+    --teal-dark: #085041;
+    --ink: #1A1A1A;
+    --ink-mid: #444441;
+    --ink-muted: #6B6B68;
+    --ink-faint: #9A9A97;
+    --border: #E2E0D8;
+    --border-dark: #C8C6BE;
+    --bg: #FAFAF7;
+    --bg-warm: #F4F3EF;
+    --white: #FFFFFF;
+    --max: 1100px;
+    --pad: clamp(20px, 5vw, 80px);
   }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 16px; }
 
   body {
     font-family: 'DM Sans', sans-serif;
-    background: #FAFAF8;
-    color: var(--gray-900);
+    background: var(--bg);
+    color: var(--ink);
     line-height: 1.65;
-    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
   }
 
-  /* NAV */
+  /* ── WRAPPER ── */
+  .wrap {
+    width: 100%;
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+  }
+
+  /* ── NAV ── */
   nav {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: rgba(250,250,248,0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--gray-100);
+    z-index: 200;
+    background: rgba(250,250,247,0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    height: 64px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 48px;
-    height: 60px;
+    justify-content: space-between;
   }
   .nav-logo {
     font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    color: var(--gray-900);
-    letter-spacing: -0.3px;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.2px;
   }
   .nav-links {
     display: flex;
-    gap: 32px;
+    gap: 36px;
     list-style: none;
   }
   .nav-links a {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
-    color: var(--gray-600);
+    color: var(--ink-muted);
     text-decoration: none;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--teal-600); }
+  .nav-links a:hover { color: var(--teal); }
 
-  /* HERO */
+  /* ── HERO ── */
   .hero {
-    padding: 80px 48px 72px;
-    max-width: 900px;
+    padding: clamp(60px, 10vw, 100px) 0 clamp(50px, 8vw, 80px);
+    border-bottom: 1px solid var(--border);
   }
-  .hero-eyebrow {
+  .hero-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 60px;
+    align-items: center;
+  }
+  .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
-    color: var(--teal-600);
+    color: var(--teal);
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.4px;
+    margin-bottom: 22px;
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--teal-mid);
+    animation: blink 2.2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 5.5vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--ink);
     margin-bottom: 20px;
   }
-  .status-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--teal-400);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 52px;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    color: var(--gray-900);
-    margin-bottom: 8px;
-  }
-  .hero h1 em {
+  h1 em {
     font-style: italic;
-    color: var(--teal-600);
+    color: var(--teal);
   }
-  .hero-sub {
+  .hero-desc {
     font-size: 17px;
-    color: var(--gray-600);
+    color: var(--ink-muted);
     font-weight: 300;
-    margin-bottom: 32px;
-    max-width: 560px;
-    line-height: 1.7;
+    line-height: 1.75;
+    max-width: 520px;
+    margin-bottom: 36px;
   }
-  .hero-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .btn-primary {
-    background: var(--gray-900);
-    color: #FAFAF8;
-    padding: 11px 24px;
-    border-radius: 6px;
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-dark {
+    background: var(--ink);
+    color: var(--white);
+    padding: 13px 28px;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.15s;
   }
-  .btn-primary:hover { background: var(--gray-800); }
-  .btn-secondary {
+  .btn-dark:hover { background: var(--ink-mid); transform: translateY(-1px); }
+  .btn-outline {
     background: transparent;
-    color: var(--gray-900);
-    padding: 11px 24px;
-    border-radius: 6px;
+    color: var(--ink);
+    padding: 13px 28px;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-    border: 1px solid var(--gray-200);
-    transition: border-color 0.2s;
+    border: 1px solid var(--border-dark);
+    transition: border-color 0.2s, transform 0.15s;
   }
-  .btn-secondary:hover { border-color: var(--gray-400); }
+  .btn-outline:hover { border-color: var(--ink-muted); transform: translateY(-1px); }
 
-  /* DIVIDER */
-  .divider {
-    height: 1px;
-    background: var(--gray-100);
-    margin: 0 48px;
+  /* Hero right — trust card */
+  .hero-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px 28px;
   }
-
-  /* STATS STRIP */
-  .stats-strip {
+  .trust-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 40px 48px;
-    gap: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  .stat {
-    padding: 0 32px 0 0;
-    border-right: 1px solid var(--gray-100);
-  }
-  .stat:first-child { padding-left: 0; }
-  .stat:last-child { border-right: none; padding-left: 32px; }
-  .stat:not(:first-child):not(:last-child) { padding-left: 32px; }
-  .stat-num {
+  .trust-item {}
+  .trust-num {
     font-family: 'DM Serif Display', serif;
-    font-size: 36px;
-    color: var(--gray-900);
+    font-size: 34px;
     letter-spacing: -1px;
+    color: var(--ink);
     line-height: 1;
     margin-bottom: 4px;
   }
-  .stat-num span { color: var(--teal-400); }
-  .stat-label {
-    font-size: 12px;
-    color: var(--gray-400);
+  .trust-num span { color: var(--teal-mid); }
+  .trust-label {
+    font-size: 11px;
+    color: var(--ink-faint);
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 0.6px;
+    line-height: 1.4;
   }
+  .trust-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+  .award-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .award-icon {
+    width: 40px; height: 40px;
+    background: var(--teal-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .award-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .award-sub { font-size: 12px; color: var(--ink-faint); }
 
-  /* SECTION */
-  section {
-    padding: 64px 48px;
-    max-width: 1000px;
+  /* ── SECTION SHELL ── */
+  .section {
+    padding: clamp(56px, 8vw, 88px) 0;
+    border-bottom: 1px solid var(--border);
   }
+  .section:last-child { border-bottom: none; }
   .section-label {
     font-size: 11px;
     font-weight: 500;
-    color: var(--teal-600);
+    color: var(--teal);
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 28px;
+    letter-spacing: 1.6px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
   }
 
-  /* EXPERIENCE */
-  .exp-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+  /* ── EXPERIENCE ── */
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
   .exp-item {
     display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 0 32px;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--gray-100);
+    grid-template-columns: 200px 1fr;
+    gap: 0 48px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border);
   }
-  .exp-item:last-child { border-bottom: none; }
-  .exp-meta {
-    padding-top: 3px;
-  }
+  .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .exp-meta { padding-top: 4px; }
   .exp-period {
     font-size: 12px;
-    color: var(--gray-400);
-    margin-bottom: 4px;
+    color: var(--ink-faint);
+    margin-bottom: 5px;
+    letter-spacing: 0.2px;
   }
   .exp-company {
     font-size: 13px;
     font-weight: 500;
-    color: var(--gray-600);
+    color: var(--ink-mid);
+    margin-bottom: 8px;
   }
-  .exp-badge {
+  .exp-tag {
     display: inline-block;
-    margin-top: 8px;
     font-size: 10px;
     font-weight: 500;
-    padding: 3px 8px;
-    border-radius: 4px;
-    background: var(--teal-50);
-    color: var(--teal-800);
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--teal-pale);
+    color: var(--teal-dark);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
   }
+  .exp-tag.current { background: #DCFCE7; color: #166534; }
   .exp-role {
     font-family: 'DM Serif Display', serif;
-    font-size: 20px;
+    font-size: 22px;
     letter-spacing: -0.3px;
-    margin-bottom: 8px;
-    color: var(--gray-900);
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.2;
   }
   .exp-desc {
     font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 12px;
+    color: var(--ink-muted);
+    line-height: 1.75;
+    margin-bottom: 14px;
   }
-  .exp-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .highlight-pill {
+  .pill-row { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pill {
     font-size: 12px;
-    padding: 4px 10px;
+    padding: 4px 11px;
     border-radius: 20px;
-    background: var(--gray-50);
-    color: var(--gray-800);
-    border: 1px solid var(--gray-100);
+    background: var(--bg-warm);
+    color: var(--ink-mid);
+    border: 1px solid var(--border);
   }
-  .highlight-pill.green {
-    background: var(--teal-50);
-    color: var(--teal-800);
-    border-color: var(--teal-100);
+  .pill.green {
+    background: var(--teal-pale);
+    color: var(--teal-dark);
+    border-color: #9FE1CB;
   }
 
-  /* SKILLS */
+  /* ── SKILLS ── */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
   .skill-card {
-    background: white;
-    border: 1px solid var(--gray-100);
-    border-radius: 10px;
-    padding: 20px 20px 16px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 22px 20px;
+    transition: border-color 0.2s, transform 0.2s;
   }
-  .skill-card-icon {
-    font-size: 22px;
-    margin-bottom: 10px;
+  .skill-card:hover { border-color: var(--teal-light); transform: translateY(-2px); }
+  .skill-icon {
+    width: 36px; height: 36px;
+    background: var(--teal-pale);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    margin-bottom: 12px;
   }
-  .skill-card-title {
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--gray-900);
-    margin-bottom: 6px;
-  }
-  .skill-card-list {
-    font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.7;
-  }
+  .skill-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 7px; }
+  .skill-desc { font-size: 13px; color: var(--ink-muted); line-height: 1.65; }
 
-  /* CREDENTIALS */
-  .cred-row {
-    display: flex;
+  /* ── CREDENTIALS ── */
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    flex-wrap: wrap;
   }
   .cred-card {
-    flex: 1;
-    min-width: 220px;
-    background: white;
-    border: 1px solid var(--gray-100);
-    border-radius: 10px;
-    padding: 20px 24px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 22px;
     display: flex;
-    align-items: flex-start;
     gap: 14px;
+    align-items: flex-start;
   }
-  .cred-icon-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    background: var(--teal-50);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: var(--teal-600);
-    font-size: 18px;
-    font-weight: 700;
+  .cred-ico {
+    width: 42px; height: 42px; flex-shrink: 0;
+    background: var(--teal-pale);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
   }
-  .cred-title {
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--gray-900);
-    margin-bottom: 3px;
-  }
-  .cred-sub {
-    font-size: 13px;
-    color: var(--gray-400);
-  }
-  .cred-highlight {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--teal-600);
-    margin-top: 4px;
-  }
+  .cred-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+  .cred-sub { font-size: 12px; color: var(--ink-faint); margin-bottom: 5px; }
+  .cred-accent { font-size: 12px; font-weight: 500; color: var(--teal); }
 
-  /* CONTACT */
-  .contact-row {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
     align-items: stretch;
   }
-  .contact-card {
-    background: var(--gray-900);
-    color: #FAFAF8;
-    border-radius: 10px;
-    padding: 28px 32px;
-    flex: 1;
-    min-width: 260px;
+  .contact-dark {
+    background: var(--ink);
+    border-radius: 14px;
+    padding: 36px 40px;
+    color: var(--white);
   }
-  .contact-card h3 {
+  .contact-dark h3 {
     font-family: 'DM Serif Display', serif;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 400;
-    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
   }
-  .contact-card p {
-    font-size: 13px;
-    color: var(--gray-200);
-    margin-bottom: 20px;
-    line-height: 1.7;
+  .contact-dark p {
+    font-size: 14px;
+    color: #A8A8A6;
+    line-height: 1.75;
+    margin-bottom: 24px;
   }
-  .contact-detail {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; }
   .contact-link {
-    font-size: 13px;
-    color: var(--teal-200);
+    font-size: 14px;
+    color: var(--teal-light);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    transition: color 0.2s;
   }
-  .contact-link:hover { color: var(--teal-100); }
-  .contact-note {
-    background: white;
-    border: 1px solid var(--gray-100);
-    border-radius: 10px;
-    padding: 28px 32px;
-    flex: 1;
-    min-width: 240px;
+  .contact-link:hover { color: #9FE1CB; }
+  .contact-link-icon {
+    width: 30px; height: 30px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; flex-shrink: 0;
+  }
+  .avail-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 32px 28px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .availability-label {
+  .avail-label {
     font-size: 11px;
     font-weight: 500;
-    color: var(--teal-600);
+    color: var(--teal);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
   }
-  .availability-status {
+  .avail-title {
     font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    color: var(--gray-900);
-    margin-bottom: 12px;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.3px;
   }
-  .availability-detail {
+  .avail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .avail-list li {
     font-size: 13px;
-    color: var(--gray-600);
-    line-height: 1.6;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .avail-list li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--teal-mid);
+    flex-shrink: 0;
   }
 
-  /* FOOTER */
+  /* ── FOOTER ── */
   footer {
-    border-top: 1px solid var(--gray-100);
-    padding: 24px 48px;
+    background: var(--bg-warm);
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+  }
+  .footer-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--pad);
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  footer span {
-    font-size: 12px;
-    color: var(--gray-400);
+  footer span { font-size: 12px; color: var(--ink-faint); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .exp-item { grid-template-columns: 1fr; gap: 8px; }
+    .exp-meta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .cred-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .nav-links { gap: 18px; }
+    .nav-links a { font-size: 11px; }
+    .skills-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">Fuad Shawon</div>
-  <ul class="nav-links">
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#credentials">Credentials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Fuad Shawon</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-eyebrow">
-    <span class="status-dot"></span>
-    Available for remote work
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for remote work
+      </div>
+      <h1>Healthcare <em>Operations</em><br>& Documentation<br>Specialist</h1>
+      <p class="hero-desc">6+ years delivering clinical documentation and virtual healthcare support for U.S. and UK-aligned providers — remotely, accurately, and on time.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn-dark">Get in touch</a>
+        <a href="#experience" class="btn-outline">View experience</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="trust-row">
+        <div class="trust-item">
+          <div class="trust-num">6<span>+</span></div>
+          <div class="trust-label">Years remote healthcare ops</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">99<span>%</span></div>
+          <div class="trust-label">Documentation accuracy</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">8.0</div>
+          <div class="trust-label">IELTS band score</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">5<span>★</span></div>
+          <div class="trust-label">Clinician satisfaction</div>
+        </div>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="award-row">
+        <div class="award-icon">🏆</div>
+        <div>
+          <div class="award-title">Level 1 Nessie Award</div>
+          <div class="award-sub">Augmedix — Clinician Satisfaction</div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h1>Healthcare <em>Operations</em><br>& Documentation<br>Specialist</h1>
-  <p class="hero-sub">6+ years delivering clinical documentation and virtual healthcare support for U.S. and UK-aligned providers — remotely, accurately, and on time.</p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Get in touch</a>
-    <a href="#experience" class="btn-secondary">View experience</a>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- STATS -->
-<div class="stats-strip">
-  <div class="stat">
-    <div class="stat-num">6<span>+</span></div>
-    <div class="stat-label">Years in remote healthcare ops</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">99<span>%</span></div>
-    <div class="stat-label">Documentation accuracy maintained</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num">8.0</div>
-    <div class="stat-label">IELTS band score</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num"><span>⭐</span>L1</div>
-    <div class="stat-label">Nessie Award — Augmedix</div>
-  </div>
-</div>
-
-<div class="divider"></div>
+</section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label">Experience</div>
-  <div class="exp-grid">
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="section-label">Experience</div>
+    <div class="exp-list">
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">May 2025 – Present</div>
-        <div class="exp-company">Techwave Solutions</div>
-        <div class="exp-badge">Current</div>
-      </div>
-      <div>
-        <div class="exp-role">Virtual Medical Assistant</div>
-        <p class="exp-desc">Managing patient communications and appointment workflows for a remote clinical environment aligned with U.S. healthcare standards. Handling EHR documentation, disability and DMI forms, and HIPAA-compliant data operations.</p>
-        <div class="exp-highlights">
-          <span class="highlight-pill green">↑20% schedule utilisation</span>
-          <span class="highlight-pill green">↓25% admin turnaround</span>
-          <span class="highlight-pill green">>98% documentation accuracy</span>
-          <span class="highlight-pill">EHR Management</span>
-          <span class="highlight-pill">HIPAA Compliant</span>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">May 2025 – Present</div>
+          <div class="exp-company">Techwave Solutions (IntelliCare)</div>
+          <span class="exp-tag current">Current</span>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Virtual Medical Assistant</div>
+          <p class="exp-desc">Managing patient communications and appointment workflows for a remote clinical environment aligned with U.S. healthcare standards. Handling EHR documentation, disability and DMI forms, and HIPAA-compliant data operations.</p>
+          <div class="pill-row">
+            <span class="pill green">↑20% schedule utilisation</span>
+            <span class="pill green">↓25% admin turnaround</span>
+            <span class="pill green">>98% documentation accuracy</span>
+            <span class="pill">EHR Management</span>
+            <span class="pill">HIPAA Compliant</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">Oct 2021 – Aug 2023</div>
-        <div class="exp-company">Augmedix</div>
-        <div class="exp-badge">Key Role</div>
-      </div>
-      <div>
-        <div class="exp-role">Sr. Medical Documentation Specialist</div>
-        <p class="exp-desc">Provided real-time and async clinical documentation for U.S. physicians across complex specialties including oncology. Trusted to train new specialists on specialty documentation within accelerated timelines.</p>
-        <div class="exp-highlights">
-          <span class="highlight-pill green">↑30% provider patient-facing time</span>
-          <span class="highlight-pill green">>99% note accuracy</span>
-          <span class="highlight-pill green">5-star clinician rating</span>
-          <span class="highlight-pill">Oncology specialist</span>
-          <span class="highlight-pill">Team trainer</span>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">Oct 2021 – Aug 2023</div>
+          <div class="exp-company">Augmedix</div>
+          <span class="exp-tag">Key Role</span>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Sr. Medical Documentation Specialist</div>
+          <p class="exp-desc">Delivered real-time and async clinical documentation for U.S. physicians across complex specialties including oncology. Trusted to train new specialists on specialty documentation within accelerated timelines.</p>
+          <div class="pill-row">
+            <span class="pill green">↑30% provider patient-facing time</span>
+            <span class="pill green">>99% note accuracy</span>
+            <span class="pill green">5-star clinician rating</span>
+            <span class="pill">Oncology specialist</span>
+            <span class="pill">Team trainer</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">Mar 2018 – Oct 2021</div>
-        <div class="exp-company">Augmedix</div>
-        <div class="exp-badge">3.5 yrs</div>
-      </div>
-      <div>
-        <div class="exp-role">Medical Documentation Specialist</div>
-        <p class="exp-desc">Core documentation support for multiple U.S. clinical providers. Built a foundation in compliant, high-accuracy remote documentation with consistent client satisfaction across all engagements.</p>
-        <div class="exp-highlights">
-          <span class="highlight-pill green">>99% accuracy</span>
-          <span class="highlight-pill green">↓20% Time to Completion</span>
-          <span class="highlight-pill">Multi-specialty</span>
-          <span class="highlight-pill">Remote Operations</span>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">Mar 2018 – Oct 2021</div>
+          <div class="exp-company">Augmedix</div>
+          <span class="exp-tag">3.5 yrs</span>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Medical Documentation Specialist</div>
+          <p class="exp-desc">Core documentation support for multiple U.S. clinical providers. Built a foundation in compliant, high-accuracy remote documentation with consistent client satisfaction across all engagements.</p>
+          <div class="pill-row">
+            <span class="pill green">>99% accuracy</span>
+            <span class="pill green">↓20% Time to Completion</span>
+            <span class="pill">Multi-specialty</span>
+            <span class="pill">Remote Operations</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="exp-item">
-      <div class="exp-meta">
-        <div class="exp-period">Feb 2024 – Dec 2024</div>
-        <div class="exp-company">Staff Asia</div>
-        <div class="exp-badge">Leadership</div>
-      </div>
-      <div>
-        <div class="exp-role">Sr. Business Development Executive</div>
-        <p class="exp-desc">Led a team of 6 in a high-volume B2B lead generation operation. Introduced tracking systems and workflow standards that significantly improved pipeline output and team efficiency.</p>
-        <div class="exp-highlights">
-          <span class="highlight-pill green">200+ leads/week</span>
-          <span class="highlight-pill green">↑35% pipeline volume</span>
-          <span class="highlight-pill">Team of 6</span>
-          <span class="highlight-pill">CRM Operations</span>
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-period">Feb 2024 – Dec 2024</div>
+          <div class="exp-company">Staff Asia</div>
+          <span class="exp-tag">Leadership</span>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">Sr. Business Development Executive</div>
+          <p class="exp-desc">Led a team of 6 in a high-volume B2B lead generation operation. Introduced tracking systems and workflow standards that significantly improved pipeline output and team efficiency.</p>
+          <div class="pill-row">
+            <span class="pill green">200+ leads/week</span>
+            <span class="pill green">↑35% pipeline volume</span>
+            <span class="pill">Team of 6</span>
+            <span class="pill">CRM Operations</span>
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
-
-<div class="divider"></div>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">Core Skills</div>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-icon">🏥</div>
-      <div class="skill-card-title">Clinical Documentation</div>
-      <div class="skill-card-list">Medical scribing · SOAP notes · Specialty documentation · EHR/EMR systems · Oncology workflows</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">🖥️</div>
-      <div class="skill-card-title">Virtual Healthcare Support</div>
-      <div class="skill-card-list">Patient scheduling · Appointment workflows · Medical forms processing · Disability & DMI forms · HIPAA compliance</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">📋</div>
-      <div class="skill-card-title">Healthcare Operations</div>
-      <div class="skill-card-list">Remote operations management · SLA adherence · Process optimisation · Quality assurance · Reporting</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">👥</div>
-      <div class="skill-card-title">Team & Project Management</div>
-      <div class="skill-card-list">Cross-functional coordination · Stakeholder communication · Onboarding & training · Performance tracking</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">📊</div>
-      <div class="skill-card-title">Business Development</div>
-      <div class="skill-card-list">B2B lead generation · Pipeline management · CRM software · Data-driven reporting · Outreach strategy</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-icon">🌐</div>
-      <div class="skill-card-title">Communication</div>
-      <div class="skill-card-list">IELTS Band 8.0 · U.S. & UK client experience · Written clinical communication · Async-first workflows</div>
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-label">Core Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🏥</div>
+        <div class="skill-title">Clinical Documentation</div>
+        <div class="skill-desc">Medical scribing · SOAP notes · Specialty documentation · EHR/EMR systems · Oncology workflows</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🖥️</div>
+        <div class="skill-title">Virtual Healthcare Support</div>
+        <div class="skill-desc">Patient scheduling · Appointment workflows · Medical forms processing · Disability & DMI forms · HIPAA compliance</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📋</div>
+        <div class="skill-title">Healthcare Operations</div>
+        <div class="skill-desc">Remote operations management · SLA adherence · Process optimisation · Quality assurance · Reporting</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">👥</div>
+        <div class="skill-title">Team & Project Management</div>
+        <div class="skill-desc">Cross-functional coordination · Stakeholder communication · Onboarding & training · Performance tracking</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-title">Business Development</div>
+        <div class="skill-desc">B2B lead generation · Pipeline management · CRM software · Data-driven reporting · Outreach strategy</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-title">Communication</div>
+        <div class="skill-desc">IELTS Band 8.0 · U.S. & UK client experience · Written clinical communication · Async-first workflows</div>
+      </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
 
 <!-- CREDENTIALS -->
-<section id="credentials">
-  <div class="section-label">Education & Credentials</div>
-  <div class="cred-row">
-    <div class="cred-card">
-      <div class="cred-icon-box">🎓</div>
-      <div>
-        <div class="cred-title">BBA — Management</div>
-        <div class="cred-sub">National University, Bangladesh · 2019</div>
-        <div class="cred-highlight">Project Management · Operations · HRM</div>
+<section class="section" id="credentials">
+  <div class="wrap">
+    <div class="section-label">Education & Credentials</div>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-ico">🎓</div>
+        <div>
+          <div class="cred-title">BBA — Management</div>
+          <div class="cred-sub">National University, Bangladesh · 2019</div>
+          <div class="cred-accent">Project Management · Operations · HRM</div>
+        </div>
       </div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-icon-box">📝</div>
-      <div>
-        <div class="cred-title">IELTS Academic</div>
-        <div class="cred-sub">TRF: 22BD047353SHAM001A</div>
-        <div class="cred-highlight">Band Score: 8.0 (Near-native proficiency)</div>
+      <div class="cred-card">
+        <div class="cred-ico">📝</div>
+        <div>
+          <div class="cred-title">IELTS Academic</div>
+          <div class="cred-sub">TRF: 22BD047353SHAM001A</div>
+          <div class="cred-accent">Band Score: 8.0 — Near-native proficiency</div>
+        </div>
       </div>
-    </div>
-    <div class="cred-card">
-      <div class="cred-icon-box">🏆</div>
-      <div>
-        <div class="cred-title">Nessie Award — Level 1</div>
-        <div class="cred-sub">Augmedix · Performance Recognition</div>
-        <div class="cred-highlight">Awarded for exceptional clinician satisfaction</div>
+      <div class="cred-card">
+        <div class="cred-ico">🏆</div>
+        <div>
+          <div class="cred-title">Nessie Award — Level 1</div>
+          <div class="cred-sub">Augmedix · Performance Recognition</div>
+          <div class="cred-accent">Awarded for exceptional clinician satisfaction</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-
-<div class="divider"></div>
 
 <!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Contact</div>
-  <div class="contact-row">
-    <div class="contact-card">
-      <h3>Let's work together</h3>
-      <p>I'm open to remote healthcare documentation roles, virtual assistant positions, and project coordination work with U.S. or UK-based clients.</p>
-      <div class="contact-detail">
-        <a href="mailto:mdfuadhassan120@gmail.com" class="contact-link">✉ mdfuadhassan120@gmail.com</a>
-        <a href="https://www.linkedin.com/in/mohammad-fuad-hasan-shawon/" class="contact-link" target="_blank">🔗 linkedin.com/in/mohammad-fuad-hasan-shawon</a>
-        <a href="tel:+8801746466733" class="contact-link">📞 +880 1746 466 733</a>
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="section-label">Contact</div>
+    <div class="contact-grid">
+      <div class="contact-dark">
+        <h3>Let's work together</h3>
+        <p>Open to remote healthcare documentation roles, virtual assistant positions, and project coordination work with U.S. or UK-based clients.</p>
+        <div class="contact-links">
+          <a href="mailto:mdfuadhassan120@gmail.com" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            mdfuadhassan120@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/mohammad-fuad-hasan-shawon/" class="contact-link" target="_blank" rel="noopener">
+            <span class="contact-link-icon">🔗</span>
+            linkedin.com/in/mohammad-fuad-hasan-shawon
+          </a>
+          <a href="tel:+8801746466733" class="contact-link">
+            <span class="contact-link-icon">📞</span>
+            +880 1746 466 733
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="contact-note">
-      <div class="availability-label">Availability</div>
-      <div class="availability-status">Open to opportunities</div>
-      <div class="availability-detail">
-        Available for async and real-time remote roles.<br>
-        Comfortable with U.S. and UK business hours.<br>
-        Payment via Wise, Payoneer, or bank transfer.
+      <div class="avail-card">
+        <div class="avail-label">
+          <span class="badge-dot"></span>
+          Availability
+        </div>
+        <div class="avail-title">Open to opportunities</div>
+        <ul class="avail-list">
+          <li>Async and real-time remote roles</li>
+          <li>U.S. and UK business hours overlap</li>
+          <li>Payment via Wise, Payoneer, or bank transfer</li>
+          <li>Available to start immediately</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <span>Mohammad Fuad Hasan Shawon · Sylhet, Bangladesh</span>
-  <span>Healthcare Operations & Documentation Specialist</span>
+  <div class="footer-inner">
+    <span>Mohammad Fuad Hasan Shawon · Sylhet, Bangladesh</span>
+    <span>Healthcare Operations & Documentation Specialist</span>
+  </div>
 </footer>
 
 </body>
